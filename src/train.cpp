@@ -34,17 +34,17 @@ int Train::getLength() {
   if (head == nullptr) return 0;
   resetOps();
   ptr = head;
-  if (!ptr->lamp) {
+  if (ptr->lamp == false) {
     ptr->lamp = true;
   }
   int length = 0;
   bool finished = false;
-  while (!finished) {
+  while (finished == false) {
     while (true) {
       ptr = ptr->nxt;
       ++stepsCount;
       ++length;
-      if (ptr->lamp) {
+      if (ptr->lamp == true) {
         ptr->lamp = false;
         break;
       }
@@ -53,7 +53,7 @@ int Train::getLength() {
       ptr = ptr->prv;
       ++stepsCount;
     }
-    if (!ptr->lamp) {
+    if (ptr->lamp == false) {
       finished = true;
     } else {
       length = 0;
