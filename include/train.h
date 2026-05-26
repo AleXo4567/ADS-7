@@ -1,4 +1,4 @@
-// Copyright 2025 Student Name
+// Copyright 2021 NNTU-CS
 #ifndef INCLUDE_TRAIN_H_
 #define INCLUDE_TRAIN_H_
 
