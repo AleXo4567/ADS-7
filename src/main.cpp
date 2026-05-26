@@ -5,42 +5,43 @@
 #include "train.h"
 
 int main() {
-    std::srand(static_cast<unsigned int>(std::time(nullptr)));
-    
-    std::cout << "n\tfalse\t\ttrue\t\trandom\n";
-    
-    for (int n = 2; n <= 100; ++n) {
-        int resFalse, resTrue, resRand;
-        
-        {
-            Train train;
-            for (int i = 0; i < n; ++i) {
-                train.addCar(false);
-            }
-            train.getLength();
-            resFalse = train.getOpCount();
-        }
-        
-        {
-            Train train;
-            for (int i = 0; i < n; ++i) {
-                train.addCar(true);
-            }
-            train.getLength();
-            resTrue = train.getOpCount();
-        }
-        
-        {
-            Train train;
-            for (int i = 0; i < n; ++i) {
-                train.addCar(std::rand() % 2);
-            }
-            train.getLength();
-            resRand = train.getOpCount();
-        }
-        
-        std::cout << n << "\t" << resFalse << "\t\t" << resTrue << "\t\t" << resRand << "\n";
+  std::srand(static_cast<unsigned int>(std::time(nullptr)));
+
+  std::cout << "n\tfalse\t\ttrue\t\trndom\n";
+
+  for (int n = 2; n <= 100; ++n) {
+    int resFalse, resTrue, resRand;
+
+    {
+      Train train;
+      for (int i = 0; i < n; ++i) {
+        train.addCar(false);
+      }
+      train.getLength();
+      resFalse = train.getOpCount();
     }
-    
-    return 0;
+
+    {
+      Train train;
+      for (int i = 0; i < n; ++i) {
+        train.addCar(true);
+      }
+      train.getLength();
+      resTrue = train.getOpCount();
+    }
+
+    {
+      Train train;
+      for (int i = 0; i < n; ++i) {
+        train.addCar(std::rand() % 2);
+      }
+      train.getLength();
+      resRand = train.getOpCount();
+    }
+
+    std::cout << n << "\t" << resFalse << "\t\t"
+              << resTrue << "\t\t" << resRand << "\n";
+  }
+
+  return 0;
 }
