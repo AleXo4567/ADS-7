@@ -7,7 +7,7 @@
 int main() {
   std::srand(static_cast<unsigned int>(std::time(nullptr)));
 
-  std::cout << "n\tfalse\t\ttrue\t\trndom\n";
+  std::cout << "n\tfalse\t\ttrue\t\trandom\n";
 
   for (int n = 2; n <= 100; ++n) {
     int resFalse, resTrue, resRand;
